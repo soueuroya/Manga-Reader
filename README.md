@@ -37,6 +37,10 @@ npm install react-native-screens react-native-safe-area-context
 
 6 - created keystore and added SHA keys
 
+keytool -genkeypair -v `
+
+\-keystore mangareader-release.keystore
+
 
 
 7 -cd MangaReaderBare
@@ -47,21 +51,32 @@ cd android
 
 
 
-8 - Uploaded to Google Play Store
+8 - local test with android studio
+
+npx react-native run-android
+
+npx react-native start
 
 
 
-9 -
+9 - safe area view error detected.
+consulted AI for more details.
+found issue: SafeAreaView within react-native has inconsistencies with Android.
+
+swapped for: react-native-safe-area-context SafeAreaView
 
 
 
-10 -
+10- aab build
+.\\gradlew.bat bundleRelease
+
+updated version number
 
 
 
-11 -
+11 - Uploaded to Google Play Store
 
 
 
-12 -
+12 - internal testing setup and testers added
 
