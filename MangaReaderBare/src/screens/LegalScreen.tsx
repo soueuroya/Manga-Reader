@@ -1,4 +1,4 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {
   ScrollView,
@@ -10,7 +10,7 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import type {RootStackParamList} from '../types/manga';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Legal'>;
+type Props = StackScreenProps<RootStackParamList, 'Legal'>;
 
 const copy = {
   privacy: {

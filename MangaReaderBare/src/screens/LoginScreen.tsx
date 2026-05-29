@@ -1,4 +1,4 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {StackScreenProps} from '@react-navigation/stack';
 import React, {useState} from 'react';
 import {
   ActivityIndicator,
@@ -11,7 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {signInWithGoogle} from '../services/authService';
 import type {RootStackParamList} from '../types/manga';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+type Props = StackScreenProps<RootStackParamList, 'Login'>;
 
 export function LoginScreen({navigation}: Props): React.JSX.Element {
   const [loading, setLoading] = useState(false);

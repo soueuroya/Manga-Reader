@@ -1,4 +1,4 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {StackScreenProps} from '@react-navigation/stack';
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {
   ActivityIndicator,
@@ -22,7 +22,7 @@ import type {
   RootStackParamList,
 } from '../types/manga';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Reader'>;
+type Props = StackScreenProps<RootStackParamList, 'Reader'>;
 
 export function ReaderScreen({navigation, route}: Props): React.JSX.Element {
   const [manga, setManga] = useState<Manga | null>(null);

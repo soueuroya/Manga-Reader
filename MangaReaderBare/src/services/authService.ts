@@ -34,7 +34,25 @@ export async function getStoredSession(): Promise<UserSession | null> {
   }
 
   try {
-    return JSON.parse(raw) as UserSession;
+    const session = JSON.parse(raw) as Partial<UserSession>;
+
+    if (
+      !session.id ||
+      !session.email ||
+      !session.displayName ||
+      !('photoURL' in session)
+    ) {
+      await AsyncStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+
+    return {
+      id: session.id,
+      email: session.email,
+      displayName: session.displayName,
+      photoURL: session.photoURL ?? null,
+      idToken: session.idToken ?? null,
+    };
   } catch {
     await AsyncStorage.removeItem(SESSION_KEY);
     return null;

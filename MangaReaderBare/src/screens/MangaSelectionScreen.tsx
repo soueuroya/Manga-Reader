@@ -1,4 +1,4 @@
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {StackScreenProps} from '@react-navigation/stack';
 import React, {useCallback, useEffect, useState} from 'react';
 import {
   ActivityIndicator,
@@ -15,7 +15,7 @@ import {getStoredSession, signOutFromGoogle} from '../services/authService';
 import {getMangas} from '../services/mangaService';
 import type {Manga, RootStackParamList, UserSession} from '../types/manga';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Library'>;
+type Props = StackScreenProps<RootStackParamList, 'Library'>;
 
 export function MangaSelectionScreen({navigation}: Props): React.JSX.Element {
   const [mangas, setMangas] = useState<Manga[]>([]);

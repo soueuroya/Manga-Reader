@@ -1,5 +1,5 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {configureGoogleSignIn, getStoredSession} from '../services/authService';
@@ -9,7 +9,7 @@ import {MangaSelectionScreen} from '../screens/MangaSelectionScreen';
 import {ReaderScreen} from '../screens/ReaderScreen';
 import type {RootStackParamList} from '../types/manga';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export function AppNavigator(): React.JSX.Element {
   const [initialRoute, setInitialRoute] = useState<
