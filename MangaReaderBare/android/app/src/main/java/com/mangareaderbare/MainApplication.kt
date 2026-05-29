@@ -1,4 +1,4 @@
-package com.mangareaderbare
+package com.boldreams.mangareadercli
 
 import android.app.Application
 import com.facebook.react.PackageList
